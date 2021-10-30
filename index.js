@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const path = require("path");
 const { createServer } = require("http");
+//REQUIRE OIDC
 const { auth } = require("express-openid-connect");
 
 
