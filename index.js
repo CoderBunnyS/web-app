@@ -5,7 +5,8 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const path = require("path");
 const { createServer } = require("http");
-// 👉 Replace this with express-openid-connect require 👈
+const { auth } = require("express-openid-connect");
+
 
 const {
   checkUrl,
@@ -37,7 +38,13 @@ app.use(
   })
 );
 
-// 👉 Replace this with auth middleware 👈
+app.use(
+   auth({
+      secret: SESSION_SECRET,
+      auth0Logout: true,
+      baseURL: APP_URL,
+   })
+);
 
 const expenses = [
   {
