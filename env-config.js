@@ -12,7 +12,7 @@ const {
 } = process.env;
 
 const appUrl = VERCEL_URL
-  ? VERCEL_URL
+  ? `https://${VERCEL_GITHUB_REPO}-git-${VERCEL_GIT_COMMIT_REF}-bunnyschaefer-auth0com.vercel.app`
   : `http://localhost:${PORT}`;
 
 function checkUrl() {
